@@ -9,6 +9,8 @@ type Props = {}
 export default function NavItems ({}: Props) {
     const [activeIndex, setActiveIndex] = useState<null|number>(null);
 
+    const isAnyOpen = activeIndex != null;
+
   return (
     <>
       <div className='flex gap-4 h-full'>
@@ -24,7 +26,7 @@ export default function NavItems ({}: Props) {
           const isOpen = i === activeIndex
           return (
             <>
-              <NavItem />
+              <NavItem category={category} handleOpen={handleOpen} isOpen={isOpen} key={category.value} isAnyOpen={isAnyOpen}/>
             </>
           )
         })}
