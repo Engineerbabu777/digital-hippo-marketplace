@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Icons } from './Icons'
 import NavItems from './NavItems'
 import { buttonVariants } from './ui/button'
+import Cart from './Cart'
 
 type Props = {}
 
@@ -68,7 +69,7 @@ export default function Navbar ({}: Props) {
                     )}
 
                     <div className='ml-4 flow-root lg:ml-6'>
-                        {/* <Cart /> */}
+                        <Cart />
                     </div>
                   </div>
                 </div>
