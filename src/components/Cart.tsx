@@ -11,6 +11,8 @@ import {
   SheetFooter
 } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
+import { ButtonVariants } from '@/components/ui/button'
+
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -78,6 +80,17 @@ export default function Cart ({}: Props) {
               <div className="relative mb-4 h-60 w-60 text-muted-foreground" aria-hidden>
                 <Image src={"/hippo-empty-cart.png"} alt="text" fill />
               </div>
+
+              <div className="text-xl font-semibold">Your cart is empty!</div>
+              <SheetTrigger asChild>
+              <Link href="/products" className={buttonVariants({
+                variant:"link",
+                size:"sm",
+                className:"text-sm text-muted-foreground"
+              })}>
+                Add item to your cart checkout
+              </Link>
+              </SheetTrigger>
             </div>
             </>
           )}
